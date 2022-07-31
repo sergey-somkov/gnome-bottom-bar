@@ -1,0 +1,6 @@
+{
+  "name": "Bottom Bar",
+  "description": "Move GNOME Top Bar to the bottom of the screen.",
+  "uuid": "bottom-bar@somkov.com",
+  "shell-version": [ "42" ]
+}

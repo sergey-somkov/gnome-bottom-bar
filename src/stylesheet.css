@@ -1,0 +1,13 @@
+/*
+MIT License
+Copyright (c) 2022 Sergey Somkov
+*/
+
+/*
+Original popup menu has 1.75em margin-bottom.
+https://github.com/GNOME/gnome-shell/blob/42.2/data/theme/gnome-shell-sass/widgets/_popovers.scss#L15
+*/
+.popup-menu.panel-menu
+{
+    margin-bottom: 0px;
+}
