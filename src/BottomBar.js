@@ -6,8 +6,15 @@ const LayoutManager = Main.layoutManager;
 
 var BottomBar = class BottomBar
 {
+	// Clutter.Actor of the Bottom Bar.
 	#actor = null;
+
+	// Monitors configuration signal listener.
+	// See more comments inside constructor.
 	#monitors_changed_listener = null;
+
+	// Actor height signal listener.
+	// See more comments inside constructor.
 	#height_listener = null;
 
 	constructor(actor)
@@ -15,16 +22,18 @@ var BottomBar = class BottomBar
 		this.#actor = actor;
 		this.#dock_bottom();
 
-		// TODO: "monitors-changed" signal documentation link and explanation.
-		// https://github.com/GNOME/gnome-shell/blob/main/js/ui/layout.js#L572
-		// https://gjs-docs.gnome.org/meta10~10_api/meta.monitormanager#signal-monitors-changed
+		// If monitors configuration is changed, then we need to re-dock the Bottom Bar.
+		// Details about "monitors-changed" event:
+		// - https://github.com/GNOME/gnome-shell/blob/42.2/js/ui/layout.js#L576
+		// - https://gjs-docs.gnome.org/meta10~10_api/meta.monitormanager#signal-monitors-changed
 		this.#monitors_changed_listener = LayoutManager.connect("monitors-changed", () =>
 		{
 			this.#dock_bottom();
 		});
 
-		// TODO: "notify::height" signal documentation link and explanation.
-		// https://gjs-docs.gnome.org/gobject20/gobject.object#signal-notify
+		// If height of the Bottom Bar is changed, then we need to re-dock it.
+		// Details about "notify::height" event:
+		// - https://gjs-docs.gnome.org/gobject20/gobject.object#signal-notify
 		this.#height_listener = actor.connect("notify::height", () =>
 		{
 			this.#dock_bottom();
@@ -51,7 +60,9 @@ var BottomBar = class BottomBar
 	get #primary_monitor()
 	{
 		// Monitor class:
-		// https://github.com/GNOME/gnome-shell/blob/42.2/js/ui/layout.js#L152
+		// - https://github.com/GNOME/gnome-shell/blob/42.2/js/ui/layout.js#L152
+		// - x,y, width, height - are representing the size and position of the individual monitor within the entire screen area.
+		//   https://docs.gtk.org/gdk3/method.Screen.get_monitor_geometry.html
 		return LayoutManager.primaryMonitor;
 	}
 

@@ -2,11 +2,10 @@
 
 GNOME shell extension that moves Top Bar to the bottom of the screen.
 
-Original idea: [gnome-shell-extension-BottomBar](https://github.com/Thoma5/gnome-shell-extension-BottomBar) (for GNOME 3.16 - 3.3x).
-
 ## System Requirements
 
-The extension was tested on Ubuntu 22.04 (GNOME 42.2).
+The extension was tested on:
+- GNOME 42.2 (Ubuntu 22.04).
 
 ## Install
 
@@ -24,11 +23,28 @@ $ bash install.sh
 
 4. Enable the extension:
 ```
-gnome-extensions enable bottom-bar@somkov.com
+$ gnome-extensions enable bottom-bar@somkov.com
 ```
 
 ## Uninstall
 
 ```
-gnome-extensions disable bottom-bar@somkov.com
+$ gnome-extensions disable bottom-bar@somkov.com
+$ gnome-extensions uninstall bottom-bar@somkov.com
 ```
+
+## References
+
+Similar projects:
+
+- https://extensions.gnome.org/extension/4764/bottompanel/
+- https://extensions.gnome.org/extension/828/bottom-panel/
+- https://extensions.gnome.org/extension/949/bottompanel/ [gnome-shell-extension-bottompanel](https://github.com/Thoma5/gnome-shell-extension-bottompanel) (for GNOME 3.16 - 3.3x).
+- https://extensions.gnome.org/extension/208/panel-settings/
+
+If you want to understand GNOME Shell Extensions programming, then I recommend you the following resources:
+
+- GNOME Shell Extensions introduction: https://wiki.gnome.org/Projects/GnomeShell/Extensions
+- GNOME Shell Extensions guide: https://gjs.guide/extensions/
+- GNOME JavaScript Docs (API): https://gjs-docs.gnome.org/
+- GNOME Shell source code: https://github.com/GNOME/gnome-shell
