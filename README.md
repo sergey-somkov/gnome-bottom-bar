@@ -33,6 +33,29 @@ $ gnome-extensions disable bottom-bar@somkov.com
 $ gnome-extensions uninstall bottom-bar@somkov.com
 ```
 
+## Troubleshooting
+
+### Problem
+
+Ubuntu can disable all user extensions in some crash scenarios:
+
+> The setting is toggled during session startup if the gnome-shell service fails within 60 seconds of initializing extensions, assuming that an extension is the most likely reason for the failure ...
+
+https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/3766#note_1042373
+
+```
+$ gsettings get org.gnome.shell disable-user-extensions
+true
+```
+
+### Solution
+
+Enable user extensions:
+
+```
+$ gsettings set org.gnome.shell disable-user-extensions false
+```
+
 ## References
 
 Similar projects:
