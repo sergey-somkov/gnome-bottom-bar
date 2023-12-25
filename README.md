@@ -5,25 +5,25 @@ GNOME shell extension that moves Top Bar to the bottom of the screen.
 ## System Requirements
 
 The extension was tested on:
-- GNOME 42.2 (Ubuntu 22.04).
+- GNOME 45.1 (Ubuntu 23.10).
 
 ## Install
 
 1. First, you should build the installation package from the source (code snippets below assume that your current directory is the root of the git repository):
 ```
-$ bash pack.sh
+bash pack.sh
 ```
 
 2. Next, install the package:
 ```
-$ bash install.sh
+bash install.sh
 ```
 
 3. Restart GNOME shell. Ubuntu 22.04 uses Wayland. Unfortunately, it is [impossible](https://www.reddit.com/r/gnome/comments/mhb6mb/comment/gsxrp7l/) to restart just GNOME shell on Wayland. You should Log Out and then Log In again.
 
 4. Enable the extension:
 ```
-$ gnome-extensions enable bottom-bar@somkov.com
+gnome-extensions enable bottom-bar@somkov.com
 ```
 
 ## Uninstall

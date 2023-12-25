@@ -1,10 +1,11 @@
 // MIT License
-// Copyright (c) 2022 Sergey Somkov
+// Copyright (c) 2023 Sergey Somkov
 
-const Main = imports.ui.main;
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+
 const LayoutManager = Main.layoutManager;
 
-var BottomBar = class BottomBar
+export class BottomBar
 {
 	// Clutter.Actor of the Bottom Bar.
 	#actor = null;
